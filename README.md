@@ -17,7 +17,7 @@ Use RubyGems:
       format none
 
       # Optional. default is stdin.events
-      tag foo.filtered
+      tag test.input
     </source>
 
 After that, you can send logs to fluentd via stdin like below.
