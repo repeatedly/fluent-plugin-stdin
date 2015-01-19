@@ -1,6 +1,6 @@
 # Fluentd plugin for reading events from stdin
 
-Reading events from stdin for testing.
+Reading events from stdin for testing or small bulk loading.
 
 ## Installation
 
