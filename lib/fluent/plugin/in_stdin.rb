@@ -21,6 +21,7 @@ module Fluent
     config_param :format, :string
     config_param :delimiter, :string, :default => "\n"
     config_param :tag, :string, :default => 'stdin.events'
+    config_param :stop_at_finished, :bool, :default => true
 
     def configure(conf)
       super
@@ -58,6 +59,11 @@ module Fluent
           log.error_backtrace
           break
         end
+      end
+      if @stop_at_finished
+        Fluent::Engine.flush!
+        sleep 1 # avoid 'process died within 1 second. exit.' log
+        Fluent::Engine.stop
       end
     end
 
