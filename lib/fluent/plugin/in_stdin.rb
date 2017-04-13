@@ -1,3 +1,5 @@
+require 'fluent/input'
+
 module Fluent
   class StdinInput < Input
     Plugin.register_input('stdin', self)
